@@ -1,4 +1,5 @@
 from operator import index
+from pickle import TRUE
 from statistics import variance
 import statistics
 
@@ -8,21 +9,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#noise = np.random.normal(0,1,4)
+#noise = np.random.normal(0,1,20)
 #noise = [0.01 ,0.02 , -0.01, 1.03]
 #my_s = pd.Series(noise)
 #print(my_s)
 
 class Return:
 
-    def __init__(self, series, symbol ,time, start , end, graphics = False ): 
+    def __init__(self, series, symbol ,time, start , end, graphics ): 
         self.series = series
         self.symbol = symbol 
         self.time = time 
         self.start = start 
         self.end  = end 
-        #self.stat = pd.Series(self.statistic(), self.index_statistic) 
-        #self.anal = pd.Series(self.analysis(), self.index_anaysis) 
         self.ret  = pd.Series(self.basic() + self.analysis() + self.statistic() ,self.index_basic + self.index_anaysis + self.index_statistic) 
         self.graphics = graphics
         if  self.graphics == True: 
@@ -55,12 +54,6 @@ class Return:
         self.series.kurtosis(), self.series.skew() ]
         return statistic
         
-    '''
-    def strategy(self): 
-        self.index_strategy = ['N.Periods SM1','N.Periods SM2']
-        strategy = [self.SM1, self.SM1]
-        return strategy 
-    '''
 
     def plot_graphics(self): 
         fig, ax = plt.subplots()
@@ -76,6 +69,9 @@ class Return:
 
 
 
-#istance = Return(my_s, 'symbol' ,'1 Ora',  'SM1' , 'SM2','start', 'end' , graphics = False )
+##### Code for test ### 
+
+#istance = Return(my_s, 'symbol' ,'1Ora', 'startdate' , 'Enddate', graphics = TRUE  )
 #print(istance.ret)
 #print(istance.series)
+# istance.plot_graphics()

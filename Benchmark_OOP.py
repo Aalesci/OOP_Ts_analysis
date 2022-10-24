@@ -36,7 +36,7 @@ class Bechmark():
 
         fig, ax1 = plt.subplots()
         fig.autofmt_xdate()
-        ax1.plot(df.index.date, self.df['Close'])
+        #ax1.plot(df.index.date, self.df['Close'])
         ax1.set_title(self.symbol + self.time +' '+ self.start_date +' ' +self.end_date )
         #if self.time == '1d':  
         #    ax1.fmt_xdata = mdates.DateFormatter('%Y-%m-%d')

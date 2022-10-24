@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import Return_OOP as roop
 import Backtest_OOP as boop
 
-
+print(range(0,16,1))
 
 sm1 = range(2, 20, 1)
 sm2 = range(2, 20, 1)

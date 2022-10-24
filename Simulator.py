@@ -32,7 +32,7 @@ def to_excell(Tiker, time, start_date, end_date):
     for i in sm2:  
         for s in sm1: 
             if i > s:  
-                print('Sma' + str(s) + str(i) )
+                print('Sma ' + str(s) + str(i) )
                 istance = boop.Backtest(Tiker, df , time, start_date, end_date, s, i)
                 data_frame = data_frame.append(istance.desc_data, ignore_index=True) #non è più desc data
 

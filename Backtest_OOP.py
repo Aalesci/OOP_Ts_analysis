@@ -54,6 +54,7 @@ class Backtest:
             self.filter()
             self.analysis()
 
+
         else:
             print('No data for : ' + self.symbol)
         #self.result = self.desc_data.append(self.strategy,ignore_index = False)
